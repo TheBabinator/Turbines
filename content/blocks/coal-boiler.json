@@ -3,12 +3,12 @@
 	"name": "Coal Boiler",
 	"description": "Heats water into steam using coal.",
 	"liquidCapacity": 50,
-	"outputLiquid": { "liquid": "steam", "amount": 8 },
+	"outputLiquid": { "liquid": "steam", "amount": 4 },
 	"size": 2,
 	"hasPower": true,
 	"hasItems": true,
 	"hasLiquids": true,
-	"craftTime": 30,
+	"craftTime": 20,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"items": {
@@ -16,7 +16,7 @@
 				{ "item": "coal", "amount": 1 }
 			]
 		},
-    "liquid": { "liquid": "water", "amount": 0.1 }
+    "liquid": { "liquid": "water", "amount": 0.2 }
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },
