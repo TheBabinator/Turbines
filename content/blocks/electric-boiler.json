@@ -1,6 +1,6 @@
 {
 	"type": "GenericCrafter",
-	"name": "Boiler",
+	"name": "Electric Boiler",
 	"description": "Heats water into steam using power.",
 	"liquidCapacity": 50,
 	"outputLiquid": { "liquid": "steam", "amount": 2 },

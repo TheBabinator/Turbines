@@ -4,10 +4,11 @@
 	"description": "Uses high pressure steam to spin a generator, outputs water.",
 	"size": 2,
 	"hasPower": true,
-	"hasItems": false,
+	"hasItems": true,
 	"hasLiquids": true,
 	"itemDuration": 10,
 	"powerProduction": 5,
+	"liquidCapacity": 30,
 	"consumes": {
 		"items": {
 			"items": []
