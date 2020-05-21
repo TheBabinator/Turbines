@@ -3,7 +3,7 @@
 	"name": "Electric Boiler",
 	"description": "Heats water into steam using power.",
 	"liquidCapacity": 50,
-	"outputLiquid": { "liquid": "steam", "amount": 2 },
+	"outputLiquid": { "liquid": "steam", "amount": 8 },
 	"size": 2,
 	"hasPower": true,
 	"hasItems": false,
@@ -12,7 +12,7 @@
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"power": 0.6,
-    "liquid": { "liquid": "water", "amount": 2, "timePeriod": 1 }
+    "liquid": { "liquid": "water", "amount": 8, "timePeriod": 20 }
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },
