@@ -1,4 +1,4 @@
-const silo = extendContent(Block, "steam-generator", {
+const steamGenerator = extendContent(PowerGenerator, "steam-generator", {
   update(tile) {
     if (tile.entity.cons.valid()) {
       tile.entity.cons.trigger();
