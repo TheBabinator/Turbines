@@ -10,12 +10,8 @@
 	"craftTime": 10,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
-		"power": 0.5,
-<<<<<<< HEAD
-		"liquid": "steam"
-=======
-		"item": {"liquid": "steam", "amount": 1}
->>>>>>> e06e1301470a8aef299303ab01c41e1af7c78412
+		"power": 0.6,
+    "liquid": {"liquid": "water", "amount": 1}
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },
