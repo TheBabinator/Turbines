@@ -9,6 +9,9 @@
 	"itemDuration": 10,
 	"powerProduction": 5,
 	"consumes": {
+		"items": {
+			"items": []
+		},
 		"liquid": { "liquid": "steam", "amount": 2, "timePeriod": 10 }
 	},
 	"requirements": [

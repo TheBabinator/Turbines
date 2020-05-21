@@ -11,7 +11,11 @@
 	"craftTime": 30,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
-		"item": "coal/1"
+		"items": {
+			"items": [
+				{ "item": "coal", "amount": 1 }
+			]
+		}
     "liquid": { "liquid": "water", "amount": 2, "timePeriod": 30 }
 	},
 	"requirements": [
