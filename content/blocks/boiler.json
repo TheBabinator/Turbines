@@ -1,17 +1,17 @@
 {
 	"type": "GenericCrafter",
 	"name": "Boiler",
-	"description": "Heats water into steam.",
+	"description": "Heats water into steam using power.",
 	"liquidCapacity": 50,
-	"outputLiquid": {"liquid": "steam", "amount": 1},
+	"outputLiquid": { "liquid": "steam", "amount": 5 },
 	"size": 2,
 	"hasPower": true,
 	"hasLiquids": true,
-	"craftTime": 10,
+	"craftTime": 20,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"power": 0.6,
-    "liquid": {"liquid": "water", "amount": 1}
+    "liquid": {"liquid": "water", "amount": 0.5}
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },

@@ -1,0 +1,21 @@
+{
+	"type": "SingleTypeGenerator",
+	"name": "Steam Turbine",
+	"description": "Uses high pressure steam to spin a generator, outputs water.",
+	"size": 2,
+	"hasPower": true,
+	"hasItems": true,
+	"itemDuration": 10,
+	"powerProduction": 1.4,
+	"consumes": {
+		"liquid": { "liquid": "steam", "amount": 2 }
+	},
+	"requirements": [
+		{ "item": "copper", "amount": 40 },
+		{ "item": "lead", "amount": 50 },
+		{ "item": "graphite", "amount": 30 },
+		{ "item": "silicon", "amount": 40 }
+	],
+	"category": "power",
+	"research": "silver-crucible"
+}
