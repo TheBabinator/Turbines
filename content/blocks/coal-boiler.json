@@ -16,7 +16,7 @@
 				{ "item": "coal", "amount": 1 }
 			]
 		},
-    "liquid": { "liquid": "water", "amount": 8, "timePeriod": 30 }
+    "liquid": { "liquid": "water", "amount": 8 }
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },
