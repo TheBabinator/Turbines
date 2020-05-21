@@ -1,0 +1,25 @@
+{
+	"type": "GenericCrafter",
+	"name": "Boiler",
+	"description": "Heats water into steam.",
+	"liquidCapacity": 50,
+	"outputLiquid": {"liquid": "steam", "amount": 1},
+	"size": 2,
+	"hasPower": true,
+	"hasLiquids": true,
+	"craftTime": 10,
+	"updateEffect": "smeltsmoke",
+	"consumes": {
+		"power": 0.5,
+		"item": "water"
+	},
+	"requirements": [
+		{ "item": "lead", "amount": 60 },
+		{ "item": "copper", "amount": 60 },
+		{ "item": "graphite", "amount": 25 }
+	],
+	"category": "crafting",
+	"research": "kiln",
+	"idleSound": "respawning",
+	"idleSoundVolume": 0.5
+}
