@@ -6,7 +6,6 @@
 	"outputLiquid": { "liquid": "steam", "amount": 5 },
 	"size": 2,
 	"hasPower": true,
-
 	"craftTime": 20,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
