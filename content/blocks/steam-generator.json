@@ -1,4 +1,6 @@
 {
+	"localizedName": "Steam",
+	"description": "Uses high pressure steam to spin a turbine, outputs water.",
 	"size": 2,
 	"hasPower": true,
 	"hasItems": false,
