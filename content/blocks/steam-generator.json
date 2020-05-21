@@ -8,7 +8,7 @@
 	"powerProduction": 5,
 	"liquidCapacity": 30,
 	"consumes": {
-		"liquid": { "liquid": "steam", "amount": 0.1, "timePeriod": 1 }
+		"liquid": { "liquid": "steam", "amount": 0.1, "timePeriod": 60 }
 	},
 	"requirements": [
 		{ "item": "copper", "amount": 40 },
