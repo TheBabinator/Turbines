@@ -1,6 +1,4 @@
 {
-	"name": "Steam Turbine",
-	"description": "Uses high pressure steam to spin a generator, outputs water.",
 	"size": 2,
 	"hasPower": true,
 	"hasItems": false,
