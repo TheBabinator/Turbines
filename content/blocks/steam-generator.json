@@ -1,19 +1,15 @@
 {
-	"type": "SingleTypeGenerator",
+	"type": "PowerGenerator",
 	"name": "Steam Turbine",
 	"description": "Uses high pressure steam to spin a generator, outputs water.",
 	"size": 2,
 	"hasPower": true,
-	"hasItems": true,
+	"hasItems": false,
 	"hasLiquids": true,
-	"itemDuration": 10,
 	"powerProduction": 5,
 	"liquidCapacity": 30,
 	"consumes": {
-		"items": {
-			"items": []
-		},
-		"liquid": { "liquid": "steam", "amount": 2, "timePeriod": 10 }
+		"liquid": { "liquid": "steam", "amount": 0.1, "timePeriod": 1 }
 	},
 	"requirements": [
 		{ "item": "copper", "amount": 40 },
