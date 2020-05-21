@@ -11,7 +11,7 @@
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"power": 0.5,
-		"item": "water"
+		"item": {"liquid": "steam", "amount": 1}
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 60 },
