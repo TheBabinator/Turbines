@@ -17,5 +17,5 @@
 		{ "item": "silicon", "amount": 40 }
 	],
 	"category": "power",
-	"research": "silver-crucible"
+	"research": "turbine-generator"
 }
