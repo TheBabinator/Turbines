@@ -90,7 +90,11 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
       Effects.effect(Fx.steam,tile.drawx() + Mathf.range(2),tile.drawy() + Mathf.range(2),4);
     }
     if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.0001)) {
-      print("kaboom");
+      fuel = getTurbineSpeed();
+      if (fuel > 0.5) {
+
+        print("kaboom");
+      }
     }
   }
 });
