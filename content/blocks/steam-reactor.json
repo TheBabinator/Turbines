@@ -1,0 +1,25 @@
+{
+	"localizedName": "Steam Reactor",
+	"description": "Debatably unusable. Requires so much steam you might as well give up. The reactor sometimes just explodes.",
+	"size": 4,
+	"hasPower": true,
+	"hasItems": false,
+	"hasLiquids": true,
+	"powerProduction": 200,
+	"liquidCapacity": 260,
+	"consumes": {
+		"liquid": { "liquid": "steam", "amount": 2 }
+	},
+	"requirements": [
+		{ "item": "lead", "amount": 400 },
+		{ "item": "metaglass", "amount": 120 },
+		{ "item": "graphite", "amount": 200 },
+		{ "item": "thorium", "amount": 200 },
+		{ "item": "silicon", "amount": 260 },
+		{ "item": "plastanium", "amount": 150 }
+	],
+	"category": "power",
+	"research": "turbine-generator",
+	"idleSound": "respawning",
+	"idleSoundVolume": 0
+}

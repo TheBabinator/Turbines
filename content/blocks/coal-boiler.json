@@ -3,12 +3,12 @@
 	"name": "Coal Boiler",
 	"description": "Heats water into steam using coal.",
 	"liquidCapacity": 50,
-	"outputLiquid": { "liquid": "steam", "amount": 8 },
+	"outputLiquid": { "liquid": "steam", "amount": 16 },
 	"size": 2,
-	"hasPower": true,
+	"hasPower": false,
 	"hasItems": true,
 	"hasLiquids": true,
-	"craftTime": 60,
+	"craftTime": 40,
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"items": {
@@ -26,5 +26,5 @@
 	"category": "crafting",
 	"research": "kiln",
 	"idleSound": "respawning",
-	"idleSoundVolume": 0.5
+	"idleSoundVolume": 0.2
 }

@@ -3,5 +3,6 @@
 	"description": "Imagine water, but it's a gas.",
 	"temperature": 0.7,
   "viscosity": 0.2,
-  "color": "eaeaeb"
+  "color": "eaeaeb",
+	"effect": "burning"
 }
