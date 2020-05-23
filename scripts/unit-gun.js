@@ -1,6 +1,5 @@
 const unitBullet = extend(BasicBulletType,{
   spawnUnit(b,x,y) {
-    print(b.owner());
     if (Vars.net.client()) return;
     unit = UnitTypes.dagger.create(b.team);
     unit.set(x,y);
@@ -24,13 +23,3 @@ unitBullet.lifetime = 180;
 
 const unitGun = extendContent(ItemTurret,"unit-gun",{});
 unitGun.ammo(Items.silicon,unitBullet);
-unitGun.entityType = extend(ItemTurret.ItemTurretEntity,{
-  get(name) {
-    if (this._custom == null) this._custom = {};
-    return this._custom[name];
-  },
-  set(name,value) {
-    if (this._custom == null) this._custom = {};
-    this._custom[name] = value;
-  }
-});

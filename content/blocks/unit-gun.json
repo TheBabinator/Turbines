@@ -5,7 +5,7 @@
 	"reload": 120,
 	"shootCone": 40,
 	"hasLiquids": true,
-	"range": 100,
+	"range": 180,
 	"shootCone": 90,
 	"rotatespeed": 4,
 	"recoil": 2,

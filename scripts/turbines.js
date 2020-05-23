@@ -1,5 +1,5 @@
 const turbineGenerator = prov(() => {
-  const entity = extend(PowerGenerator.GeneratorEntity,{
+  entity = extend(PowerGenerator.GeneratorEntity,{
     getTurbineSpeed() {
       return this._turbineSpeed;
     },
