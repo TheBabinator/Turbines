@@ -5,7 +5,7 @@
 	"hasPower": true,
 	"hasItems": false,
 	"hasLiquids": true,
-	"powerProduction": 200,
+	"powerProduction": 240,
 	"liquidCapacity": 260,
 	"consumes": {
 		"liquid": { "liquid": "steam", "amount": 2 }
@@ -19,7 +19,7 @@
 		{ "item": "plastanium", "amount": 150 }
 	],
 	"category": "power",
-	"research": "turbine-generator",
+	"research": "steam-generator",
 	"idleSound": "respawning",
 	"idleSoundVolume": 0
 }
