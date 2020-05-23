@@ -85,15 +85,20 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
     entity.setTurbineEfficiency(entity.getTurbineEfficiency() - 0.0001);
     entity.setTurbineEfficiency(Mathf.clamp(entity.getTurbineEfficiency(),0,1));
     entity.productionEfficiency = entity.getTurbineSpeed() * (0.8 + entity.getTurbineEfficiency() * 1.2);
-    entity.setTurbineRotation((entity.getTurbineRotation() + entity.getTurbineSpeed() * 16) % 360);
+    entity.setTurbineRotation((entity.getTurbineRotation() + entity.getTurbineSpeed() * 6) % 360);
     if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.2)) {
       Effects.effect(Fx.steam,tile.drawx() + Mathf.range(2),tile.drawy() + Mathf.range(2),4);
     }
-    if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.0001)) {
-      fuel = getTurbineSpeed();
-      if (fuel > 0.5) {
-
-        print("kaboom");
+    if (Mathf.chance(entity.getTurbineSpeed() * 0.00001)) {
+      fuel = entity.getTurbineSpeed();
+      if (fuel > 0.8) {
+        Effects.shake(4,8,tile.x,tile.y);
+        Effects.effect(Fx.nuclearShockwave,tile.drawx(),tile.drawy(),0);
+        for (i = 0; i < 80; i++) {
+          Effects.effect(Fx.steam,tile.drawx() + Mathf.range(16),tile.drawy() + Mathf.range(16),fuel*16);
+        }
+        Damage.damage(tile.x,tile.y,fuel*20,fuel*3200);
+        entity.kill();
       }
     }
   }

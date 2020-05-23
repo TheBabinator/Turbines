@@ -5,7 +5,7 @@
 	"hasPower": true,
 	"hasItems": false,
 	"hasLiquids": true,
-	"powerProduction": 10,
+	"powerProduction": 8,
 	"liquidCapacity": 30,
 	"consumes": {
 		"liquid": { "liquid": "steam", "amount": 0.1 }
