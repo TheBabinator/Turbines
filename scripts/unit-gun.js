@@ -1,6 +1,5 @@
 const unitBullet = extend(BasicBulletType,{
   spawnUnit(b,x,y) {
-    if (Vars.net.client()) return;
     unit = UnitTypes.dagger.create(b.team);
     unit.set(x,y);
     unit.add();
