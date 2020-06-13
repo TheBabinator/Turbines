@@ -1,6 +1,6 @@
 {
 	"localizedName": "Steam Reactor",
-	"description": "Debatably unusable. Requires so much steam you might as well give up. The reactor sometimes just explodes.",
+	"description": "This bad boy generates power like an absolute beast. It can run at great steam pressure, but don't push it; even this beauty has its limits.",
 	"size": 4,
 	"hasPower": true,
 	"hasItems": false,
@@ -8,7 +8,7 @@
 	"powerProduction": 240,
 	"liquidCapacity": 260,
 	"consumes": {
-		"liquid": { "liquid": "steam", "amount": 2 }
+		"liquid": { "liquid": "steam", "amount": 1 , "timePeriod": 600 }
 	},
 	"requirements": [
 		{ "item": "lead", "amount": 400 },

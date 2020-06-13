@@ -73,15 +73,15 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
     if (entity.getTurbineSpeed() == null) entity.setTurbineSpeed(0);
     if (entity.getTurbineEfficiency() == null) entity.setTurbineEfficiency(0);
     if (entity.getTurbineRotation() == null) entity.setTurbineRotation(0);
-    if (entity.cons.valid()) {
-      entity.cons.trigger();
-      entity.setTurbineSpeed(entity.getTurbineSpeed() + entity.liquids.total() / this.liquidCapacity * 0.002);
-      entity.setTurbineEfficiency(entity.getTurbineEfficiency() + entity.liquids.total() / this.liquidCapacity * 0.0002);
-    } else {
-      entity.setTurbineSpeed(entity.getTurbineSpeed() - 0.0005);
+    for (i = 0; i < 10; i++) {
+      if (entity.cons.valid()) {
+        entity.cons.trigger();
+        entity.setTurbineSpeed(entity.getTurbineSpeed() + entity.liquids.total() / this.liquidCapacity * 0.002);
+        entity.setTurbineEfficiency(entity.getTurbineEfficiency() + entity.liquids.total() / this.liquidCapacity * 0.0002);
+      }
     }
-    entity.setTurbineSpeed(entity.getTurbineSpeed() - 0.001);
-    entity.setTurbineSpeed(Mathf.clamp(entity.getTurbineSpeed(),0,1));
+    entity.setTurbineSpeed(entity.getTurbineSpeed() - Mathf.pow(entity.getTurbineSpeed(),2) * 0.01);
+    entity.setTurbineSpeed(Mathf.clamp(entity.getTurbineSpeed(),0,2));
     entity.setTurbineEfficiency(entity.getTurbineEfficiency() - 0.0001);
     entity.setTurbineEfficiency(Mathf.clamp(entity.getTurbineEfficiency(),0,1));
     entity.productionEfficiency = entity.getTurbineSpeed() * (0.8 + entity.getTurbineEfficiency() * 1.2);
@@ -89,7 +89,7 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
     if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.2)) {
       Effects.effect(Fx.steam,tile.drawx() + Mathf.range(2),tile.drawy() + Mathf.range(2),4);
     }
-    if (Mathf.chance(entity.getTurbineSpeed() * 0.00001)) {
+    if (Mathf.chance(Mathf.clamp(entity.getTurbineSpeed()-1,0,1) * 0.0001)) {
       fuel = entity.getTurbineSpeed();
       if (fuel > 0.8) {
         Effects.shake(4,8,tile.x,tile.y);
