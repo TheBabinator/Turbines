@@ -8,9 +8,9 @@ const unitBullet = extend(BasicBulletType,{
   hit(b,x,y) {
     this.spawnUnit(b,x,y);
   },
-  despawned(b) {
-    this.spawnUnit(b,b.getX(),b.getY())
-  }
+  //despawned(b) {
+  //  this.spawnUnit(b,b.getX(),b.getY())
+  //}
 })
 
 unitBullet.bulletWidth = 8;
