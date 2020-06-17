@@ -89,7 +89,7 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
     if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.2)) {
       Effects.effect(Fx.steam,tile.drawx() + Mathf.range(2),tile.drawy() + Mathf.range(2),4);
     }
-    if (Mathf.chance(Mathf.clamp(entity.getTurbineSpeed()-1,0,1) * 0.0001)) {
+    if (Mathf.chance(Mathf.clamp(entity.getTurbineSpeed()-1,0,1) * 0.001)) {
       fuel = entity.getTurbineSpeed();
       if (fuel > 0.8) {
         Effects.shake(4,8,tile.x,tile.y);

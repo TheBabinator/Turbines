@@ -1,3 +1,24 @@
+const compressorEntity = prov(() => {
+  return extend(GenericCrafter.GenericCrafterEntity,{
+    getMatter() {
+      if (this._matter == null) this._matter = 0;
+      return this._matter;
+    },
+    setMatter(value) {
+      if (this._matter == null) this._matter = 0;
+      this._matter = value;
+    },
+    addMatter(value) {
+      if (this._matter == null) this._matter = 0;
+      this._matter += value;
+    },
+    subMatter(value) {
+      if (this._matter == null) this._matter = 0;
+      this._matter -= value;
+    }
+  })
+});
+
 const matterCompressor = extendContent(GenericSmelter,"matter-compressor",{
   load() {
     this.super$load();
@@ -15,7 +36,7 @@ const matterCompressor = extendContent(GenericSmelter,"matter-compressor",{
   },
   update(tile) {
     entity = tile.ent();
-    if ((entity.getMatter() < 60) && entity.items.total() > 0) {
+    if ((entity.getMatter() < 60) && entity.items.total() > 0 && entity.cons.valid()) {
       entity.addMatter(entity.items.take().cost)
     }
     if ((entity.getMatter() >= 60) && entity.cons.valid() && entity.progress != 1) {
@@ -35,23 +56,4 @@ const matterCompressor = extendContent(GenericSmelter,"matter-compressor",{
   }
 });
 
-matterCompressor.entityType = prov(() => {
-  return extend(GenericCrafter.GenericCrafterEntity,{
-    getMatter() {
-      if (this._matter == null) this._matter = 0;
-      return this._matter;
-    },
-    setMatter(value) {
-      if (this._matter == null) this._matter = 0;
-      this._matter = value;
-    },
-    addMatter(value) {
-      if (this._matter == null) this._matter = 0;
-      this._matter += value;
-    },
-    subMatter(value) {
-      if (this._matter == null) this._matter = 0;
-      this._matter -= value;
-    }
-  })
-})
+matterCompressor.entityType = compressorEntity;
