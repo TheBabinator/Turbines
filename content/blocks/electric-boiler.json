@@ -1,7 +1,7 @@
 {
 	"type": "GenericCrafter",
 	"name": "Electric Boiler",
-	"description": "Heats water into steam using power. Not practical for power generation.",
+	"description": "Heats water into steam using power. Not specifically for power generation.",
 	"liquidCapacity": 50,
 	"outputLiquid": { "liquid": "steam", "amount": 8 },
 	"size": 2,
@@ -20,7 +20,7 @@
 		{ "item": "silicon", "amount": 25 }
 	],
 	"category": "crafting",
-	"research": "kiln",
+	"research": "coal-boiler",
 	"idleSound": "respawning",
 	"idleSoundVolume": 0.2
 }

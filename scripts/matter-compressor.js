@@ -1,7 +1,6 @@
-const matterCompressor = extendContent(GenericCrafter,"matter-compressor",{
+const matterCompressor = extendContent(GenericSmelter,"matter-compressor",{
   load() {
     this.super$load();
-    this.baseRegion = Core.atlas.find(this.name);
     this.topRegion = Core.atlas.find(this.name + "-lights");
   },
   setBars() {
@@ -29,7 +28,7 @@ const matterCompressor = extendContent(GenericCrafter,"matter-compressor",{
   },
   draw(tile) {
     entity = tile.ent();
-    Draw.rect(this.baseRegion,tile.drawx(),tile.drawy());
+    this.super$draw(tile);
     Draw.alpha(entity.warmup*(Mathf.clamp(entity.getMatter()/64,0,1)*Mathf.sin(Time.time()*0.1)));
     Draw.rect(this.topRegion,tile.drawx(),tile.drawy());
     Draw.reset();

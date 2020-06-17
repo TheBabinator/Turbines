@@ -9,7 +9,7 @@
 	"updateEffect": "smeltsmoke",
 	"consumes": {
 		"power": 1.8,
-		"liquid": { "liquid": "steam", "amount": 0.2 }
+		"liquid": { "liquid": "steam", "amount": 0.25 }
 	},
 	"outputItem": { "item": "compressed-matter", "amount": 1 },
 	"itemCapacity": 10,

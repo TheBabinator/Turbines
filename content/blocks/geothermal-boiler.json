@@ -1,0 +1,25 @@
+{
+	"localizedName": "Geothermal Boiler",
+	"description": "Heats water into steam using geothermal energy.",
+	"liquidCapacity": 50,
+	"outputLiquid": { "liquid": "steam", "amount": 12 },
+	"size": 2,
+	"hasPower": false,
+	"hasItems": false,
+	"hasLiquids": true,
+	"craftTime": 30,
+	"updateEffect": "smeltsmoke",
+	"consumes": {
+    "liquid": { "liquid": "water", "amount": 0.4 }
+	},
+	"requirements": [
+		{ "item": "lead", "amount": 80 },
+		{ "item": "copper", "amount": 70 },
+		{ "item": "silicon", "amount": 35 },
+		{ "item": "metaglass", "amount": 20 }
+	],
+	"category": "crafting",
+	"research": "coal-boiler",
+	"idleSound": "respawning",
+	"idleSoundVolume": 0.2
+}
