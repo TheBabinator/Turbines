@@ -73,10 +73,10 @@ const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
     if (entity.getTurbineSpeed() == null) entity.setTurbineSpeed(0);
     if (entity.getTurbineEfficiency() == null) entity.setTurbineEfficiency(0);
     if (entity.getTurbineRotation() == null) entity.setTurbineRotation(0);
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < entity.getTurbineSpeed()*9 + 1; i++) {
       if (entity.cons.valid()) {
         entity.cons.trigger();
-        entity.setTurbineSpeed(entity.getTurbineSpeed() + entity.liquids.total() / this.liquidCapacity * 0.002);
+        entity.setTurbineSpeed(entity.getTurbineSpeed() + (entity.liquids.total() / this.liquidCapacity * 0.002)*(1-entity.getTurbineSpeed()*0.5));
         entity.setTurbineEfficiency(entity.getTurbineEfficiency() + entity.liquids.total() / this.liquidCapacity * 0.0002);
       }
     }
