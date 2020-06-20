@@ -23,7 +23,6 @@ unitBullet.lifetime = 180;
 
 const denseUnitBullet = extend(BasicBulletType,{
   spawnUnit(b,x,y) {
-    toast("yes",2)
     if (Vars.net.client()) return;
     unit = UnitTypes.fortress.create(b.team);
     unit.set(x,y);
