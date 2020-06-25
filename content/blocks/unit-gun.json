@@ -2,7 +2,7 @@
 	"localizedName": "Steam Powered Unit Delivery System",
 	"description": "Codename SPUDS. Not made of potatoes.\nTechnically functions without steam, but you should probably be using steam.",
 	"size": 2,
-	"reload": 600,
+	"reload": 6000,
 	"shootCone": 40,
 	"hasLiquids": true,
 	"range": 180,
@@ -18,7 +18,7 @@
 	"consumes": {
 		"liquid": { "liquid": "steam", "amount": 0.06 }
 	},
-	"coolantMultiplier": 10,
+	"coolantMultiplier": 1000,
 	"requirements": [
 		{ "item": "copper", "amount": 40 },
 		{ "item": "lead", "amount": 36 },

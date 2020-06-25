@@ -11,7 +11,7 @@ const unitBullet = extend(BasicBulletType,{
   despawned(b) {
     this.spawnUnit(b,b.getX(),b.getY())
   }
-})
+});
 
 unitBullet.bulletWidth = 8;
 unitBullet.bulletHeight = 8;
@@ -34,7 +34,7 @@ const denseUnitBullet = extend(BasicBulletType,{
   despawned(b) {
     this.spawnUnit(b,b.getX(),b.getY())
   }
-})
+});
 
 denseUnitBullet.bulletWidth = 8;
 denseUnitBullet.bulletHeight = 8;
@@ -46,7 +46,7 @@ denseUnitBullet.lifetime = 180;
 
 const unitGun = extendContent(ItemTurret,"unit-gun",{
   init() {
-    unitGun.ammo(
+    this.ammo(
       Items.silicon,unitBullet,
       Vars.content.getByName(ContentType.item,"turbines-compressed-matter"),denseUnitBullet
     );
