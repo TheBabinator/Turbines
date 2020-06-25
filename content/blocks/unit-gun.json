@@ -2,7 +2,7 @@
 	"localizedName": "Steam Powered Unit Delivery System",
 	"description": "Codename SPUDS. Not made of potatoes.",
 	"size": 2,
-	"reload": 120,
+	"reload": 240,
 	"shootCone": 40,
 	"hasLiquids": true,
 	"range": 180,
