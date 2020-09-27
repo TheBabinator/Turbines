@@ -1,107 +1,39 @@
-const turbineGenerator = prov(() => {
-  entity = extend(PowerGenerator.GeneratorEntity,{
+const steamGenerator = extendContent(PowerGenerator, "advanced-steam-generator", {});
+steamGenerator.buildType = () => extendContent(PowerGenerator.GeneratorBuild, steamGenerator, {
     getTurbineSpeed() {
-      return this._turbineSpeed;
+        return this._turbineSpeed;
     },
     setTurbineSpeed(value) {
-      this._turbineSpeed = value;
-    },
-    getTurbineEfficiency() {
-      return this._turbineEfficiency;
-    },
-    setTurbineEfficiency(value) {
-      this._turbineEfficiency = value;
+        this._turbineSpeed = value;
     },
     getTurbineRotation() {
-      return this._turbineRotation;
+        return this._turbineRotation;
     },
     setTurbineRotation(value) {
-      this._turbineRotation = value;
-    }
-  });
-  return entity;
-});
-
-const steamGenerator = extendContent(PowerGenerator,"steam-generator",{
-  update(tile) {
-    entity = tile.entity;
-    if (entity.getTurbineSpeed() == null) entity.setTurbineSpeed(0);
-    if (entity.getTurbineEfficiency() == null) entity.setTurbineEfficiency(0);
-    if (entity.cons.valid()) {
-      entity.cons.trigger();
-      entity.setTurbineSpeed(entity.getTurbineSpeed() + entity.liquids.total() / this.liquidCapacity * 0.03);
-      entity.setTurbineEfficiency(entity.getTurbineEfficiency() + entity.liquids.total() / this.liquidCapacity * 0.00014);
-    } else {
-      entity.setTurbineSpeed(entity.getTurbineSpeed() - 0.01);
-    }
-    entity.setTurbineSpeed(entity.getTurbineSpeed() - 0.02);
-    entity.setTurbineSpeed(Mathf.clamp(entity.getTurbineSpeed(),0,1));
-    entity.setTurbineEfficiency(entity.getTurbineEfficiency() - 0.0001);
-    entity.setTurbineEfficiency(Mathf.clamp(entity.getTurbineEfficiency(),0,1));
-    entity.productionEfficiency = entity.getTurbineSpeed() * (0.8 + entity.getTurbineEfficiency() * 1.2);
-    if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.2)) {
-      Effects.effect(Fx.steam,tile.drawx(),tile.drawy(),2);
-    }
-  }
-});
-
-steamGenerator.entityType = turbineGenerator;
-
-const steamReactor = extendContent(PowerGenerator,"steam-reactor",{
-  load() {
-    this.super$load();
-    this.baseRegion = Core.atlas.find(this.name + "-bottom");
-    this.turbineRegion = Core.atlas.find(this.name + "-turbine");
-    this.topRegion = Core.atlas.find(this.name);
-  },
-  generateIcons() {
-    return [
-      Core.atlas.find(this.name + "-bottom"),
-      Core.atlas.find(this.name + "-turbine"),
-      Core.atlas.find(this.name)
-    ]
-  },
-  draw(tile) {
-    entity = tile.entity;
-    if (entity.getTurbineRotation() == null) entity.setTurbineRotation(0);
-    Draw.rect(this.baseRegion,tile.drawx(),tile.drawy());
-    Draw.rect(this.turbineRegion,tile.drawx(),tile.drawy(),entity.getTurbineRotation());
-    Draw.rect(this.topRegion,tile.drawx(),tile.drawy());
-  },
-  update(tile) {
-    entity = tile.entity;
-    if (entity.getTurbineSpeed() == null) entity.setTurbineSpeed(0);
-    if (entity.getTurbineEfficiency() == null) entity.setTurbineEfficiency(0);
-    if (entity.getTurbineRotation() == null) entity.setTurbineRotation(0);
-    for (i = 0; i < entity.getTurbineSpeed()*9 + 1; i++) {
-      if (entity.cons.valid()) {
-        entity.cons.trigger();
-        entity.setTurbineSpeed(entity.getTurbineSpeed() + (entity.liquids.total() / this.liquidCapacity * 0.002)*(1-entity.getTurbineSpeed()*0.5));
-        entity.setTurbineEfficiency(entity.getTurbineEfficiency() + entity.liquids.total() / this.liquidCapacity * 0.0002);
-      }
-    }
-    entity.setTurbineSpeed(entity.getTurbineSpeed() - Mathf.pow(entity.getTurbineSpeed(),2) * 0.01);
-    entity.setTurbineSpeed(Mathf.clamp(entity.getTurbineSpeed(),0,2));
-    entity.setTurbineEfficiency(entity.getTurbineEfficiency() - 0.0001);
-    entity.setTurbineEfficiency(Mathf.clamp(entity.getTurbineEfficiency(),0,1));
-    entity.productionEfficiency = entity.getTurbineSpeed() * (0.8 + entity.getTurbineEfficiency() * 1.2);
-    entity.setTurbineRotation((entity.getTurbineRotation() + entity.getTurbineSpeed() * 6) % 360);
-    if (Mathf.chance(entity.liquids.total() / this.liquidCapacity * 0.2)) {
-      Effects.effect(Fx.steam,tile.drawx() + Mathf.range(2),tile.drawy() + Mathf.range(2),4);
-    }
-    if (Mathf.chance(Mathf.clamp(entity.getTurbineSpeed()-1,0,1) * 0.001)) {
-      fuel = entity.getTurbineSpeed();
-      if (fuel > 0.8) {
-        Effects.shake(4,8,tile.x,tile.y);
-        Effects.effect(Fx.nuclearShockwave,tile.drawx(),tile.drawy(),0);
-        for (i = 0; i < 80; i++) {
-          Effects.effect(Fx.steam,tile.drawx() + Mathf.range(16),tile.drawy() + Mathf.range(16),fuel*16);
+        this._turbineRotation = value;
+    },
+    updateTile() {
+        this.super$updateTile();
+        let speed = this.getTurbineSpeed();
+        let rotation = this.getTurbineRotation();
+        if (speed != speed) speed = 0;
+        if (rotation != speed) rotation = 0;
+        if (this.cons.valid()) {
+            this.cons.trigger();
+            speed = speed + ((this.liquids.total() / this.block.liquidCapacity) * 0.02);
+            print(this.liquids.total())
+            print(this.block.liquidCapacity)
         }
-        Damage.damage(tile.x,tile.y,fuel*20,fuel*3200);
-        entity.kill();
-      }
+        speed = speed - 0.01;
+        speed = Mathf.clamp(speed, 0, 1);
+        rotation = rotation + speed;
+        this.setTurbineSpeed(speed);
+        this.setTurbineRotation(rotation);
+        this.productionEfficiency = speed;
+        if (Mathf.chance((this.liquids.total() / this.block.liquidCapacity) * 0.2)) {
+            Fx.steam.at(this.tile.drawx() + Mathf.range(2), this.tile.drawy() + Mathf.range(2));
+        }
     }
-  }
 });
 
-steamReactor.entityType = turbineGenerator;
+const steamReactor = extendContent(PowerGenerator, "steam-reactor", {});

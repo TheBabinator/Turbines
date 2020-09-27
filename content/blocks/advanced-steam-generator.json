@@ -1,0 +1,44 @@
+{
+  "localizedName": "Advanced Steam Turbine",
+  "description": "Uses high pressure steam to spin a turbine and generate power. Releases steam regardless of whether or not there is sufficient pressure to spin the turbine.",
+  "size": 2,
+  "hasPower": true,
+  "outputsPower": true,
+  "consumesPower": false,
+  "hasItems": false,
+  "hasLiquids": true,
+  "powerProduction": 9,
+  "liquidCapacity": 30,
+  "consumes": {
+    "liquid": {
+      "liquid": "steam",
+      "amount": 0.1
+    }
+  },
+  "requirements": [
+    {
+      "item": "copper",
+      "amount": 40
+    },
+    {
+      "item": "lead",
+      "amount": 50
+    },
+    {
+      "item": "metaglass",
+      "amount": 40
+    },
+    {
+      "item": "graphite",
+      "amount": 30
+    },
+    {
+      "item": "silicon",
+      "amount": 40
+    }
+  ],
+  "category": "power",
+  "research": "steam-generator",
+  "idleSound": "respawning",
+  "idleSoundVolume": 0
+}

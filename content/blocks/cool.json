@@ -1,0 +1,11 @@
+{
+	"localizedName": "Cool",
+	"description": "it cool",
+	"size": 1,
+	"health": 69420,
+	"requirements": [
+		{ "item": "copper", "amount": 69420 },
+	],
+	"category": "defense",
+	"research": "copper-wall"
+}
