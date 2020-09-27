@@ -38,7 +38,5 @@
     }
   ],
   "category": "power",
-  "research": "steam-generator",
-  "idleSound": "respawning",
-  "idleSoundVolume": 0
+  "research": "steam-generator"
 }

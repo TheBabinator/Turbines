@@ -1,49 +1,46 @@
 {
   "localizedName": "Steam Reactor",
-  "description": "This bad boy generates power like an absolute beast. It can run at great steam pressure, but don't push it; even this beauty has its limits.",
+  "description": "Generates much more power than a regular steam turbine, but needs a lot more steam to start spinning.",
   "size": 4,
   "hasPower": true,
   "outputsPower": true,
   "consumesPower": false,
   "hasItems": false,
   "hasLiquids": true,
-  "powerProduction": 200,
+  "powerProduction": 100,
   "liquidCapacity": 260,
   "consumes": {
     "liquid": {
       "liquid": "steam",
-      "amount": 1,
-      "timePeriod": 600
+      "amount": 1
     }
   },
   "requirements": [
+    {
+      "item": "copper",
+      "amount": 300
+    },
     {
       "item": "lead",
       "amount": 400
     },
     {
       "item": "metaglass",
-      "amount": 120
+      "amount": 200
     },
     {
       "item": "graphite",
-      "amount": 200
-    },
-    {
-      "item": "thorium",
-      "amount": 200
+      "amount": 250
     },
     {
       "item": "silicon",
-      "amount": 260
+      "amount": 250
     },
     {
       "item": "plastanium",
-      "amount": 150
+      "amount": 200
     }
   ],
   "category": "power",
-  "research": "advanced-steam-generator",
-  "idleSound": "respawning",
-  "idleSoundVolume": 0
+  "research": "advanced-steam-generator"
 }
