@@ -1,3 +1,7 @@
+# ATTENTION
+this mod is discontinued in favour of my newer mod TheBabinator/Toaster where i will probably be adding steam turbines in the future
+i will still be more than happy to accept a pull request to fix this mod though
+
 # TheBabinator/Turbines
 Mindustry mod that does steam and stuff.
 
