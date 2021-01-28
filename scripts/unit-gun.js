@@ -1,7 +1,7 @@
 const unitBullet = extend(BasicBulletType,{
   spawnUnit(b,x,y) {
     if (Vars.net.client()) return;
-    unit = UnitTypes.dagger.create(b.team);
+    let unit = UnitTypes.dagger.create(b.team);
     unit.set(x,y);
     unit.add();
   },
@@ -24,7 +24,7 @@ unitBullet.lifetime = 180;
 const denseUnitBullet = extend(BasicBulletType,{
   spawnUnit(b,x,y) {
     if (Vars.net.client()) return;
-    unit = UnitTypes.fortress.create(b.team);
+    let unit = UnitTypes.fortress.create(b.team);
     unit.set(x,y);
     unit.add();
   },
